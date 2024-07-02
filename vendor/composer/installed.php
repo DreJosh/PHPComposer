@@ -3,7 +3,7 @@
         'name' => 'belmo/phpcomposer',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'dace97590f759797376188d60493f6ad3323b514',
+        'reference' => 'e67a90d6bea2877d306dc4543ac0ec0a3f518ed2',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'belmo/phpcomposer' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'dace97590f759797376188d60493f6ad3323b514',
+            'reference' => 'e67a90d6bea2877d306dc4543ac0ec0a3f518ed2',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

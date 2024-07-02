@@ -29,3 +29,26 @@ Phan é um analisador estático para PHP que prefere minimizar falsos-positivos.
 O Phan procura problemas comuns e verificará a compatibilidade de tipos em várias operações quando digitar as informações estão disponíveis ou podem ser deduzidas. Phan tem uma boa (mas não abrangente) compreensão do controle de fluxo e pode controlar valores em alguns casos de uso (por exemplo, matrizes, inteiros e cadeias de caracteres).
 Instalação `composer require phan/phan`
 
+### Script
+
+Podemos criar um script para facilitar nossa vida ao executar um comando, para isso pasta adicionar ao nosso composer `composer.json`, um novo array com o nome script, após isso criamos um nome para a variavel e colocamoos o comando que ele vai executar.
+`"scripts": {
+    "test": "phpunit tests\\TestBuscadorDeCursos.php",
+    "cs": "phpcs --standard=PSR12 src/",
+    "phan": "phan --allow-polyfill-parser",
+}`
+Para determinar scripts dentro de outro scripts utilizamos um arroba em frente a referencia e com isso o composer entende que estamos declarando outros scripts.
+`"scripts": {
+    "test": "phpunit tests\\TestBuscadorDeCursos.php",
+    "cs": "phpcs --standard=PSR12 src/",
+    "phan": "phan --allow-polyfill-parser",
+    "check": [
+        "@phan",
+        "@cs",
+        "@test"
+    ]
+}`
+Ao criar um script podemos declarar e descrever o que aquele script irá fazer com o comando `scripts-decriptioons` no `composer.json`.
+`"scripts-descriptions": {
+    "check": "Roda as verificações do código. PHAN, PHPCS e PHPUNIT"
+}`
